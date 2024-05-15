@@ -19,6 +19,12 @@ jobs:
           run: |
             cd api/
             npm run build-lambda:prod
+            
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: api/dist/main.js
 
   aws_cdk:
     runs-on: ubuntu-latest
@@ -26,6 +32,11 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v4
+
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: build
 
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
