@@ -1,5 +1,6 @@
 on: [push]
-inputs: debug_log
+inputs: 
+  debug_logL true
 jobs:
   aws_cdk:
     runs-on: ubuntu-latest
