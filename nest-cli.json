@@ -1,0 +1,29 @@
+{
+  "monorepo": true,
+  "root": "apps/cdk-nest-deploy",
+  "sourceRoot": "apps/cdk-nest-deploy/src",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/cdk-nest-deploy/tsconfig.app.json"
+  },
+  "projects": {
+    "cdk-nest-deploy": {
+      "type": "application",
+      "root": "apps/cdk-nest-deploy",
+      "entryFile": "main",
+      "sourceRoot": "apps/cdk-nest-deploy/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cdk-nest-deploy/tsconfig.app.json"
+      }
+    },
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    }
+  }
+}
