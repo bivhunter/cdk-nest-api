@@ -10,10 +10,11 @@ jobs:
         with:
           cdk_subcommand: 'diff'
           actions_comment: true
+          debug_log: true
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: 'ap-northeast-1'
+          AWS_DEFAULT_REGION: 'us-east-1'
 
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
