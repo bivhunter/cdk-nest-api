@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: cdk diff
+      - name: cdk diff -- app "bin/cdk-nest-deploy.ts" CdkNestDeployStack
         uses: youyo/aws-cdk-github-actions@v2
         with:
           cdk_subcommand: 'diff'
