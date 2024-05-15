@@ -39,7 +39,7 @@ jobs:
           name: build
       - shell: bash
         run: |
-          cp main.js api/dist/main.js
+          mkdir -p api/dist && cp main.js api/dist/main.js
 
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
