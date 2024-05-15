@@ -37,6 +37,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build
+      - shell: bash
+        run: |
+          cp main.js api/dist/main.js
 
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
