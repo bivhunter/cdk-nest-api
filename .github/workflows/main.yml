@@ -1,6 +1,23 @@
 on: [push]
 
 jobs:
+  nestjs_build:
+    runs-on: ubuntu-22.04
+    steps:
+      -   uses: actions/checkout@v4
+      -   name: Use Node.js 18.19.0
+          uses: actions/setup-node@v1
+          with:
+             node-version: 18.19.0
+             
+      -   name: Install dependencies
+          working-directory: ./api
+          run: npm install
+          
+      -   name: Build
+          working-directory: ./api
+          run: npm run build-lambda:prod
+
   aws_cdk:
     runs-on: ubuntu-latest
     steps:
