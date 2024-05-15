@@ -10,6 +10,7 @@ jobs:
         with:
           cdk_subcommand: 'diff --app "bin/cdk-nest-deploy.ts" CdkNestDeployStack'
           actions_comment: true
+          cdk_stack: 'CdkNestDeployStack'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
