@@ -10,3 +10,4 @@ api/.env.stage.dev
 api/.env.stage.prod
 env.json
 !api/webpack.config.js
+api/dist
