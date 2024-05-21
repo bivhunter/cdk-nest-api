@@ -25,14 +25,14 @@ module.exports = function (options, webpack) {
                 },
             }),
         ],
-        optimization: {
-            minimize: true,
-            minimizer: [
-                new TerserPlugin({
-                    test: /\.js(\?.*)?$/i,
-                }),
-            ],
-            concatenateModules: true,
-        },
+        // optimization: {
+        //     minimize: true,
+        //     minimizer: [
+        //         new TerserPlugin({
+        //             test: /\.js(\?.*)?$/i,
+        //         }),
+        //     ],
+        //     // concatenateModules: true,
+        // },
     };
 };

@@ -29,11 +29,11 @@ export class CdkNestDeployStack extends cdk.Stack {
       defaultMethodOptions: {
         apiKeyRequired: true,
       },
-      defaultCorsPreflightOptions: {
-        allowOrigins: ["http://localhost:3000"],
-        allowMethods: ["OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"],
-        allowHeaders: Cors.DEFAULT_HEADERS,
-      },
+      // defaultCorsPreflightOptions: {
+      //   allowOrigins: ["http://localhost:3000"],
+      //   allowMethods: ["OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"],
+      //   allowHeaders: Cors.DEFAULT_HEADERS,
+      // },
   });
   
   api.root.addProxy({
