@@ -9,3 +9,4 @@ cdk.out
 api/.env.stage.dev
 api/.env.stage.prod
 env.json
+!api/webpack.config.js
