@@ -1,5 +1,5 @@
 import * as cdk from 'aws-cdk-lib';
-import { LambdaIntegration, RestApi } from 'aws-cdk-lib/aws-apigateway';
+import { Cors, LambdaIntegration, RestApi } from 'aws-cdk-lib/aws-apigateway';
 import { Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
@@ -27,7 +27,12 @@ export class CdkNestDeployStack extends cdk.Stack {
     const api = new RestApi(this, "Api", {
       deploy: true,
       defaultMethodOptions: {
-      apiKeyRequired: true,
+        apiKeyRequired: true,
+      },
+      defaultCorsPreflightOptions: {
+        allowOrigins: ["http://localhost:3000"],
+        allowMethods: ["OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"],
+        allowHeaders: Cors.DEFAULT_HEADERS,
       },
   });
   
