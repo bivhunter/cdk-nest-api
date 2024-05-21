@@ -5,6 +5,7 @@ const lazyImports = [
     // 'express',
     // 'class-transformer/storage' // https://github.com/nestjs/mapped-types/issues/486#issuecomment-932715880
 ];
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = function (options, webpack) {
     return {
@@ -24,5 +25,14 @@ module.exports = function (options, webpack) {
                 },
             }),
         ],
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    test: /\.js(\?.*)?$/i,
+                }),
+            ],
+            concatenateModules: true,
+        },
     };
 };
