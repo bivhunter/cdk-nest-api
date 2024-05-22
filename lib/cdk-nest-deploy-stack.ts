@@ -30,7 +30,7 @@ export class CdkNestDeployStack extends cdk.Stack {
                 apiKeyRequired: true,
             },
             defaultCorsPreflightOptions: {
-                allowOrigins: ['http://localhost:4200', 'https://bivhunter.github.io/'],
+                allowOrigins: ['http://localhost:4200', 'https://bivhunter.github.io'],
                 allowMethods: ['OPTIONS', 'GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
                 allowHeaders: Cors.DEFAULT_HEADERS,
             },
